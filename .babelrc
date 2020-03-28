@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators",{"legacy": true}], // 装饰器babel
+    "@babel/plugin-syntax-dynamic-import",
+    "transform-class-properties",
+    ["@babel/plugin-transform-runtime",{"corejs": 2}]
+    // "@babel/plugin-transform-runtime"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "directory": "src",
+  "children": [{
+    "directory": "pages",
+    "children": [{
+      "file": "index.js"
+    }]
+  }, {
+    "directory": "styles",
+    "children": [{
+      "file": "index.js"
+    }]
+  }, {
+    "directory": "actions",
+    "children": [{
+      "file": "index.js"
+    }, {
+      "file": "actionType.js"
+    }]
+  }, {
+    "directory": "reducers",
+    "children": [{
+      "file": "index.js"
+    }]
+  }, {
+    "directory": "utils",
+    "children": [{
+      "file": "index.js"
+    }]
+  }, {
+    "directory": "common",
+    "children": [{
+      "file": "nav.js"
+    }, {
+      "directory": "styledComponent"
+    }]
+  }, {
+    "directory": "webpack",
+    "children": [{
+      "file": "webpack.base.config.js"
+    }, {
+      "file": "webpack.dev.config.js"
+    }, {
+      "file": "webpack.prod.config.js"
+    }]
+  }, {
+    "file": "index.js"
+  }, {
+    "file": "store.js"
+  }, {
+    "file": "routes.js"
+  }]
+}
