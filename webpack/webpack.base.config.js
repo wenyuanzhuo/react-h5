@@ -7,10 +7,11 @@ module.exports = (config) => {
     },
     output: {
       path: config.buildPath,
-      filename: '[name].js'
+      filename: '[name].js',
+      publicPath: config.publicUrl || '/',
     },
     resolve: {
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       alias: {
         '@': path.resolve('./src'),
       }
@@ -23,6 +24,17 @@ module.exports = (config) => {
           path.resolve('./server.js'),
         ],
         loader: 'babel-loader',
+      }, {
+        test: /\.tsx$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-react',
+            '@babel/preset-typescript'
+          ]
+        }
       }, {
         test: /\.html$/,
         use: {

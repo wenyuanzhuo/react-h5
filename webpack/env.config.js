@@ -1,5 +1,5 @@
 const path = require('path')
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV || 'development'
 const config = {
   dev: {
     debug: true
