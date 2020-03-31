@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { HistoryContext } from '@/common/context'
-import { BrowserRouter, Router, Switch, Route } from 'react-router-dom'
+import { useHistory, Switch, Route } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 import { router } from '@/common/nav'
 import { getLayout } from '@/routes'
 
-import Login from '@/pages/Login.jsx'
-import Register from '@/pages/Register.jsx'
 
 function App() {
-  const historyCtx = useContext(HistoryContext)
+  // const historyCtx = useContext(HistoryContext)
+  const historyCtx = useHistory()
+  console.log(historyCtx)
   const basicLayoutRoute = getLayout(router, 'BasicLayout')
   const userLayoutRoute = getLayout(router, 'UserLayout')
   const BasicLayout = basicLayoutRoute[0].component

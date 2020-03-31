@@ -3,12 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const webpackMerge = require('webpack-merge')
 const DashboardPlugin = require('webpack-dashboard/plugin')
-
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const config = require('./env.config')
 const path = require('path')
 const baseWebpackConfig = require('./webpack.base.config')(config)
 
 module.exports = webpackMerge(baseWebpackConfig, {
+  mode: 'development',
   devServer: {
     hot: true,
     publicPath: '/',
@@ -19,7 +20,6 @@ module.exports = webpackMerge(baseWebpackConfig, {
   devtool: 'eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
       'process.env.config': JSON.stringify(config),
     }),
     new HtmlWebpackPlugin({
