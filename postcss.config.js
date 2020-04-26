@@ -1,4 +1,5 @@
 module.exports = {
+  // parser: 'postcss-strip-inline-comments',
   plugins: {
     'postcss-import': {
       path: ['node_modules', 'src/styles']

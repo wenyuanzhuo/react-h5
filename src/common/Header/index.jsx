@@ -27,11 +27,21 @@ function Header ({ height = 0, maxHeight = 0 }) {
       height: ${Math.min(height, maxHeight)}px;
     `}
   `
+  const Top = styled.div`
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+  `
   return (
     <header className="header">
-        <ScrollDiv height={height} maxHeight={maxHeight}></ScrollDiv>
-        <Nav height={maxHeight}>
-        </Nav>
+      <div css={css`
+         height: 20px;
+      `}>111111111111111</div>
+      <Top></Top>
+      <ScrollDiv height={height} maxHeight={maxHeight}>
+      </ScrollDiv>
+      <Nav height={maxHeight}>
+      </Nav>
     </header>
   )
 }

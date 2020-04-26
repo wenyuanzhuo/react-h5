@@ -23,7 +23,14 @@ module.exports = (config) => {
           path.resolve('./node_modules'),
           path.resolve('./server.js'),
         ],
-        loader: 'babel-loader',
+        use: [{
+          loader: 'babel-loader',
+        }, {
+          loader: path.resolve('./loaders/inlinePx2ViewportLoader'),
+          options: {
+            viewportUnit: 'vh'
+          }
+        }]
       }, {
         test: /\.tsx$/,
         exclude: /node_modules/,
@@ -44,8 +51,21 @@ module.exports = (config) => {
         test: /\.scss$/,
         use: [
           'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'postcss-loader'
+          { 
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            } },
+          'postcss-loader',
+          { 
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                fiber: false,
+                outputStyle: 'expanded'
+              },
+            }
+          }
         ]
       }]
     }

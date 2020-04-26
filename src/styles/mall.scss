@@ -1,3 +1,10 @@
 .mall-container {
   height: 1000px;
+  .mall-header {
+    display: flex;
+  }
+  .ignore {
+    height: 80px;
+    line-height: 80px;
+  }
 }
