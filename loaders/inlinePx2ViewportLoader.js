@@ -7,8 +7,8 @@ const defaultOptions = {
   unitPrecision: 2,
   minPixelValue: 1,
 }
-const ZPXRegExp = /(\d+)px/
-// const ZPXRegExp = /\b(\d+(\.\d+)?)SUPX\b/;
+// const ZPXRegExp = /(\d+)px/
+const ZPXRegExp = /\b(\d+(\.\d+)?)SUPX\b/;
 module.exports = function (source) {
   // 获取用户配置的options
   const opts = loaderUtils.getOptions(this);

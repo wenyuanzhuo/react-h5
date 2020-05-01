@@ -7,7 +7,7 @@ module.exports = (config) => {
     },
     output: {
       path: config.buildPath,
-      filename: '[name].js',
+      filename: '[name].[chunkhash].js',
       publicPath: config.publicUrl || '/',
     },
     resolve: {
